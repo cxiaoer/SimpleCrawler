@@ -5,6 +5,7 @@ import re
 from HTMLParser import HTMLParser
 
 
+
 class myHtmlParser(HTMLParser):
 	"""docstring for myHtmlParser"""
 	def __init__(self):

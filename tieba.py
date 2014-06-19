@@ -56,6 +56,7 @@ def main(start,end,writer):
 
 
 
+
 def getThreadLink(url,writer):
     # html = urllib2.urlopen(url).read().decode('gbk')
     # doc = lxml.html.document_fromstring(html)

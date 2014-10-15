@@ -46,27 +46,27 @@ def crawl_content(keyword):
 				print "craw url----------->" + content_url+" errror"
 
 
-# def worker():
-# 	while keyword_queue.not_empty:
-# 		keyword = keyword_queue.get()
-# 		crawl_content(keyword)
-# 		sleep(1)
-# 		keyword_queue.task_done()
+def worker():
+	while keyword_queue.not_empty:
+		keyword = keyword_queue.get()
+		crawl_content(keyword)
+		sleep(1)
+		keyword_queue.task_done()
 
 
-# for i in thread_num:
-# 	thread = Thread(target=worker)
-# 	thread.setDaemon(True)
-# 	thread.start()
+for i in thread_num:
+	thread = Thread(target=worker)
+	thread.setDaemon(True)
+	thread.start()
 
 
-# def readKeyWord():
-# 	csvRead = file("keyword.csv",'rb')
-# 	reader = csv.reader(csvRead)
-# 	for line in reader:
-# 		keyword_queue.put(line[0].replace(" ","+"))
+def readKeyWord():
+	csvRead = file("keyword.csv",'rb')
+	reader = csv.reader(csvRead)
+	for line in reader:
+		keyword_queue.put(line[0].replace(" ","+"))
 
-# readKeyWord()
-# keyword_queue.join()
-crawl_content("Snooki+and+Jwoww")
+readKeyWord()
+keyword_queue.join()
+# crawl_content("Snooki+and+Jwoww")
 

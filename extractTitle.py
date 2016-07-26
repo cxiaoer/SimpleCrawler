@@ -8,6 +8,7 @@ from urllib2 import HTTPError
 import codecs
 
 
+
 def main():
 	csvRead = file('tieba1.csv','rb')
 	reader = csv.reader(csvRead)
